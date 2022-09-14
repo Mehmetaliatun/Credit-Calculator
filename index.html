@@ -12,26 +12,57 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="m-4">
     <h1 class="text-center text-warning">Kredi Hesaplama Aracı</h1>
     <div class="m-2">
       <label for="select">Kredi:</label>
-      <select name="select" id="kredi" class="w-75 form-select mb-3 mt-2">
+      <select name="select" id="kredi" class="form-select mb-3 mt-2">
         <option value="selected">Seciniz</option>
-        <option value="Ev Kredisi">Ev Kredisi</option>
-        <option value="Arac Kredisi">Arac Kredisi</option>
-        <option value="Ihtiyac Kredisi">Ihtiyac Kredisi</option>
+        <option value="Ev Kredisi" id="ev">Ev Kredisi</option>
+        <option value="Arac Kredisi" id="arac">Arac Kredisi</option>
+        <option value="Ihtiyac Kredisi" id="ihtiyac">Ihtiyac Kredisi</option>
       </select>
 
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="vade">Vade:</label>
-        <input type="number" class="form-control w-75" id="vade" />
+        <input type="number" class="form-control" id="vade" />
       </div>
       <div>
-        <h3>Tutar:</h3>
+        <label for="tutar">Kredi Tutarı:</label>
+        <input type="number" class="form-control" id="tutar" />
       </div>
+      <input
+        type="button"
+        value="Hesapla"
+        class="w-100 mt-4 mb-4 bg-dark text-light rounded-2"
+        id="hesapla"
+      />
     </div>
-    <input type="button" value="Hesapla" class="w-100 bg-dark text-light" />
+
+    <table class="table table-bordered border-warning">
+      <h1 class="text-warning">Kredi Bilgileri</h1>
+      <tbody>
+        <tr>
+          <th>Kredi Miktari</th>
+          <td id="tl">₺</td>
+          <th>Kredi Tipi</th>
+          <td id="krediSonuc"></td>
+        </tr>
+        <tr>
+          <th>Vade</th>
+          <td id="vadeSonuc"></td>
+          <th>Faiz Oranı</th>
+          <td id="oran"></td>
+        </tr>
+        <tr>
+          <th>Toplam Tutar</th>
+          <td>₺</td>
+          <th>Taksit Tutari</th>
+          <td>₺</td>
+        </tr>
+      </tbody>
+    </table>
+
     <script src="app.js"></script>
   </body>
 </html>
