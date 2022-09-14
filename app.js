@@ -1,11 +1,5 @@
-const kredi = {
-  evKredisi: {
-    faiz: 1.29,
-  },
-  aracKredisi: {
-    faiz: 1.49,
-  },
-  ihtiyacKredisi: {
-    faiz: 1.69,
-  },
-};
+//? Secilen kredi turune gore kredi turunu yazdir
+
+//? Vade vadenin oldugu alana
+//? Kredi tutari kredi miktarina yazdir
+//? hesapla click aldiginda fonk. calisir.
