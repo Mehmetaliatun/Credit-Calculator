@@ -9,7 +9,7 @@ document.querySelector(`#hesapla`).addEventListener("click", () => {
   let faiz;
 
   if (kredi === "Ev Kredisi") {
-    faiz = 1.99;
+    faiz = 1.29;
   } else if (kredi === "Arac Kredisi") {
     faiz = 2.19;
   } else if (kredi === "Ihtiyac Kredisi") {
@@ -22,9 +22,15 @@ document.querySelector(`#hesapla`).addEventListener("click", () => {
   const toplamTutar = Math.round(
     tutar * ((faiz * (1 + faiz) ** vade) / ((1 + faiz) ** vade - 1))
   );
-  const taksitTutar = toplamTutar / vade;
+  const taksitTutar = (toplamTutar / vade).toFixed();
+  //? hesapla click aldiginda fonk. calisir.
 
   console.log(toplamTutar);
+  document.querySelector("#tl").textContent = tutar + " ₺";
+  document.querySelector("#vadeSonuc").textContent = vade + " Ay";
+  document.querySelector("#ttutar").textContent = toplamTutar + " ₺";
+  document.querySelector("#krediSonuc").textContent = kredi;
+  document.querySelector("#oran").textContent = faiz + " %";
+  document.querySelector("#taksitt").textContent = taksitTutar + " ₺";
+  document.querySelector("table").classList.remove("d-none");
 });
-
-//? hesapla click aldiginda fonk. calisir.
